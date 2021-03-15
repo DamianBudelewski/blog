@@ -1,15 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
-    },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    title: `Damian Budelewski`,
+    description: `Personal blog.`,
+    siteUrl: `https://blog.budelewski.com`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -25,6 +18,23 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Roboto",
+              variants: ["300", "400", "500"],
+            },
+            {
+              family: "Open Sans Condensed",
+              variants: ["300", "700"],
+            },
+          ],
+        },
       },
     },
     {
