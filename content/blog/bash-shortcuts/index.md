@@ -8,15 +8,15 @@ description: "My private tips and tricks on how to make your life easier with al
 
 ## Aliases and shortcuts
 
-If you don't want to waste your time one re-typing commands, moving along the line with the arrow keys or please take a look at this examples. If you don't use them already then make sure to give them a try!
+If you don't want to waste your time one re-typing commands, moving along the line with the arrow keys then please take a look at this examples. If you don't know them already then make sure to give it a try!
 
 *zsh with autosuggestions*  
     - `ctrl + space to accept suggestions`  
 
 *moving along the line*  
-    - `ctrl + a -> jump to the beggining`  
-    - `ctrl + e -> jump to the end`  
-    - `ctrl + w -> remove last word`  
+    - `ctrl + a` to jump to the beggining  
+    - `ctrl + e` to jump to the end  
+    - `ctrl + w` to remove last word  
 
 *creating simple aliases*  
     - `alias d=docker`  
@@ -29,7 +29,6 @@ If you don't want to waste your time one re-typing commands, moving along the li
     - To open the file after such cmd `mkdir -p few/nested/dirs/my_file.txt`   
     use `cat $_`. Without it you will have to specify all the directories once more!
     
-
 
 ## How to set it up?
 
