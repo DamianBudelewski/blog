@@ -6,31 +6,17 @@ description: "My private tips and tricks on how to make your life easier with al
 
 <img src="bash-shortcuts.gif" width="100%" />
 
-## Aliases and shortcuts
+## Aliases and autosuggestions
 
-If you don't want to waste your time one re-typing commands, moving along the line with the arrow keys then please take a look at this examples. If you don't know them already then make sure to give it a try!
+#### Creating simple aliases
+Add those line to your `.zshrc` or `.bashrc` file! They are located in your home directory.
+```bash
+alias d=docker
+alias ap=ansible-playbook
+```
 
-*zsh with autosuggestions*  
-    - `ctrl + space to accept suggestions`  
-
-*moving along the line*  
-    - `ctrl + a` to jump to the beggining  
-    - `ctrl + e` to jump to the end  
-    - `ctrl + w` to remove last word  
-
-*creating simple aliases*  
-    - `alias d=docker`  
-    - `alias ap=ansible-playbook`  
-
-*using alias expansion*  
-    - `gss` after pressing space will expand to `git status -s`
-
-*using internal variables*  
-    - To open the file after such cmd `mkdir -p few/nested/dirs/my_file.txt`   
-    use `cat $_`. Without it you will have to specify all the directories once more!
-    
-
-## How to set it up?
+#### Enable autosuggestions with zsh
+`ctrl + space` to accept suggestions  
 
 For zsh and autosuggestions use this links: [zsh](https://ohmyz.sh/), [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
@@ -38,7 +24,10 @@ If you only want to partial accept the suggestions like it's shown at the gif ab
 
 `bindkey '^ ' forward-word`
 
-The next thing is alias expansion functionality. I find it very usefull, especially when I want to change something in the alias after expanding it. To achieve that paste this code at the end of your `.zshrc` file. 
+#### Using alias expansion  
+`gss` after pressing space will expand to `git status -s`
+
+To set it up paste this code at the end of your `.zshrc` file. 
 
 ```bash
 expand-alias-space() {
@@ -54,4 +43,85 @@ bindkey -M isearch " " magic-space
 ```
 <sub>Source: https://blog.sebastian-daschner.com/entries/zsh-aliases<sub>
 
-### Hope you will find this useful. Thanks!
+
+
+## Moving and erasing
+
+
+<img src="moving_cli.png" width="90%" />
+
+#### Most used by me:  
+`ctrl + a` and `ctrl + e` - jump to the beggining/end  
+`alt + b` and `alt + f` - jump word backward/forward  
+`ctrl + w` - remove last word  
+`ctrl + l` - clear the terminal
+
+
+## Special variables
+
+#### Most recent parameter with `$_`
+```bash
+# Let's assume you moved file from one nested dir to another.  
+mv old/nested/dir/my_file.txt new/nested/dir/my_file.txt
+
+# To easily open it in next command use `$_`. 
+vim $_
+```
+
+#### Last used command with `!!`
+
+```bash
+ubuntu@web-server:~$ systemctl restart nginx 
+Authentication is required to restart 'nginx.service'.
+...
+
+ubuntu@web-server:~$ sudo !!
+sudo systemctl restart nginx 
+```
+
+#### Get back to the previous location with `cd -`
+
+```bash
+$ pwd
+/Users/damian
+
+$ cd /var/log  
+$ pwd
+/var/log
+
+$ cd -        
+$ pwd
+/Users/damian
+
+```
+
+
+## Creating and using variables
+
+#### Get variable from json file
+```bash
+$ ip=$(jq -r '.vm.ip' file.json)
+$ echo $ip
+10.0.0.4
+
+```
+
+    
+
+#### Use variable to remove all stopped containers:
+```bash
+docker rm $(docker ps -aq)
+```
+
+#### If you found that interesting then checkout these articles too!
+
+[Bash cheatsheet](https://devhints.io/bash)  
+[Bash shortcuts](https://gist.github.com/tuxfight3r/60051ac67c5f0445efee)   
+[Learn VIM with interactive tutorial](https://www.openvim.com/)   
+
+
+### Thanks! 
+Got any questions? Please don't hesitate to ask! You can find me here:
+
+linkedin.com/in/damianbudelewski/  
+damian.budelewski@gmail.com
