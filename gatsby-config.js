@@ -56,6 +56,14 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+//              theme: 'Dark+ (default dark)'
+              theme: `Shades of Purple`, // From package.json: contributes.themes[0].label
+              extensions: ['shades-of-purple'] // From package.json: name
+            }
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 630,
@@ -70,6 +78,16 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 630,
+              backgroundColor: "transparent",
+            },
+          },
         ],
       },
     },
