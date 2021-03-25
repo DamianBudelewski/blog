@@ -4,13 +4,11 @@ date: "2021-03-15T22:12:03.284Z"
 description: "My private tips and tricks on how to make your life easier with aliases, functions, shortcuts and zsh!"
 ---
 
-<img src="bash-shortcuts.gif" width="100%" />
-
 ## Aliases and autosuggestions
 
 #### Creating simple aliases
 Add those line to your `.zshrc` or `.bashrc` file! They are located in your home directory.
-```bash
+```sh
 alias d=docker
 alias ap=ansible-playbook
 ```
@@ -29,7 +27,7 @@ If you only want to partial accept the suggestions like it's shown at the gif ab
 
 To set it up paste this code at the end of your `.zshrc` file. 
 
-```bash
+```bash {numberLines :55}
 expand-alias-space() {
   zle _expand_alias
   zle self-insert
@@ -92,7 +90,6 @@ $ pwd
 $ cd -        
 $ pwd
 /Users/damian
-
 ```
 
 
@@ -121,7 +118,9 @@ docker rm $(docker ps -aq)
 
 
 ### Thanks! 
-Got any questions? Please don't hesitate to ask! You can find me here:
+Got any questions? 
 
-linkedin.com/in/damianbudelewski/  
-damian.budelewski@gmail.com
+You can find me on [![LinkedIn][1.2]][1] or send me an email: damian.budelewski@gmail.com
+
+[1.2]: https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/linkedin-3-16.png (LinkedIn)
+[1]: https://www.linkedin.com/in/damianbudelewski/
