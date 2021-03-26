@@ -13,6 +13,7 @@ alias d=docker
 alias ap=ansible-playbook
 ```
 
+
 #### Enable autosuggestions with zsh
 `ctrl + space` to accept suggestions  
 
@@ -20,7 +21,9 @@ For zsh and autosuggestions use this links: [zsh](https://ohmyz.sh/), [autosugge
 
 If you only want to partial accept the suggestions like it's shown at the gif above, then add this line to your .zshrc file, because by default it will accept the whole suggestion.
 
-`bindkey '^ ' forward-word`
+```bash
+bindkey '^ ' forward-word
+```
 
 #### Using alias expansion  
 `gss` after pressing space will expand to `git status -s`
@@ -49,47 +52,47 @@ bindkey -M isearch " " magic-space
 <img src="moving_cli.png" width="90%" />
 
 #### Most used by me:  
-`ctrl + a` and `ctrl + e` - jump to the beggining/end  
-`alt + b` and `alt + f` - jump word backward/forward  
-`ctrl + w` - remove last word  
-`ctrl + l` - clear the terminal
+- `ctrl + a` and `ctrl + e` - jump to the beggining/end  
+- `alt + b` and `alt + f` - jump word backward/forward  
+- `ctrl + w` - remove last word  
+- `ctrl + l` - clear the terminal
 
 
 ## Special variables
 
-#### Most recent parameter with `$_`
+#### Most recent parameter: `$_`
 ```bash
-# Let's assume you moved file from one nested dir to another.  
-mv old/nested/dir/my_file.txt new/nested/dir/my_file.txt
+# move file from dir to another.  
+mv one/my_file.txt two/my_file.txt
 
-# To easily open it in next command use `$_`. 
+# To open it use `$_`. 
 vim $_
 ```
 
-#### Last used command with `!!`
+#### Last used command: `!!`
 
 ```bash
-ubuntu@web-server:~$ systemctl restart nginx 
-Authentication is required to restart 'nginx.service'.
+ubuntu@web:~$ systemctl restart nginx 
+Authentication required ...
 ...
 
-ubuntu@web-server:~$ sudo !!
+ubuntu@web:~$ sudo !!
 sudo systemctl restart nginx 
 ```
 
-#### Get back to the previous location with `cd -`
+#### Previous location: `-`
 
 ```bash
-$ pwd
-/Users/damian
+ubuntu@web:~$ pwd
+/etc/nginx
 
-$ cd /var/log  
-$ pwd
+ubuntu@web:~$ cd /var/log  
+ubuntu@web:~$ pwd
 /var/log
 
-$ cd -        
-$ pwd
-/Users/damian
+ubuntu@web:~$ cd -        
+ubuntu@web:~$ pwd
+/etc/nginx
 ```
 
 

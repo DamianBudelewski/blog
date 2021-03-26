@@ -109,6 +109,7 @@ samp {
   font-size: 1em; /* 2 */
 }
 
+
 /**
  * Add the correct font size in all browsers.
  */
@@ -340,4 +341,10 @@ summary {
 
 [hidden] {
   display: none;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  background: black;
+  background-color: black;
+  color: white;
 }

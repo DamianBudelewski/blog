@@ -58,7 +58,6 @@ module.exports = {
           {
             resolve: `gatsby-remark-vscode`,
             options: {
-//              theme: 'Dark+ (default dark)'
               theme: `Shades of Purple`, // From package.json: contributes.themes[0].label
               extensions: ['shades-of-purple'] // From package.json: name
             }
@@ -75,7 +74,12 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+            },
+          },
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
           {

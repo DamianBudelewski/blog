@@ -61,6 +61,7 @@
   --color-heading-black: #1a202ce1;
   --color-accent: #3d0a1b85;
   --color-background: #f6f6f6;
+  --color-highlight-background: #2d2b55;
 }
 
 /* HTML elements */
@@ -320,6 +321,8 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+
+
 /* Media queries */
 
 @media (max-width: 42rem) {
@@ -332,3 +335,4 @@ a:focus {
     list-style-position: inside;
   }
 }
+
