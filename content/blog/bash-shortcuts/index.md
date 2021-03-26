@@ -7,28 +7,33 @@ description: "My private tips and tricks on how to make your life easier with al
 ## Aliases and autosuggestions
 
 #### Creating simple aliases
-Add those line to your `.zshrc` or `.bashrc` file! They are located in your home directory.
+Add those line to your *.zshrc* or *.bashrc* file! 
 ```sh
 alias d=docker
 alias ap=ansible-playbook
 ```
-
+After that you will be able to use for example:
+- `d ps` to list running containers. 
+- `ap playbook.yaml` to execute your playbook. 
 
 #### Enable autosuggestions with zsh
-`ctrl + space` to accept suggestions  
 
-For zsh and autosuggestions use this links: [zsh](https://ohmyz.sh/), [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-
-If you only want to partial accept the suggestions like it's shown at the gif above, then add this line to your .zshrc file, because by default it will accept the whole suggestion.
-
+Imagine you can create a shortcut that will accept suggestions in your shell.
+You only have to install [zsh](https://ohmyz.sh/) and plugin [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions). After that, add this line tou your *.zshrc* file and you are ready to go.
 ```bash
 bindkey '^ ' forward-word
 ```
+Now use this shortcut `ctrl + space` to accept suggestions  
+
 
 #### Using alias expansion  
-`gss` after pressing space will expand to `git status -s`
+After some time and more and more aliases you might get confused what you are actually executing. To refresh your memery each time you run commands you can add alias expansion fucntionality! You will be still typing only the shortcut but after pressing *space* you will get the whole alias *expanded* to the full command.
 
-To set it up paste this code at the end of your `.zshrc` file. 
+###### For example:
+- `gss` after pressing space will expand to `git status -s`
+- `gcmsg` after pressing space will expand to `git commit -m`
+
+To set it up paste this code at the end of your *.zshrc* file. 
 
 ```bash {numberLines :55}
 expand-alias-space() {
@@ -51,7 +56,7 @@ bindkey -M isearch " " magic-space
 
 <img src="moving_cli.png" width="90%" />
 
-#### Most used by me:  
+#### Most handy ones:  
 - `ctrl + a` and `ctrl + e` - jump to the beggining/end  
 - `alt + b` and `alt + f` - jump word backward/forward  
 - `ctrl + w` - remove last word  
@@ -61,6 +66,7 @@ bindkey -M isearch " " magic-space
 ## Special variables
 
 #### Most recent parameter: `$_`
+The underscore variable is set at shell startup and contains the absolute file name of the shell or script being executed as passed in the argument list. Subsequently, it expands to the last argument to the previous command, after expansion. 
 ```bash
 # move file from dir to another.  
 mv one/my_file.txt two/my_file.txt
@@ -70,6 +76,8 @@ vim $_
 ```
 
 #### Last used command: `!!`
+
+Exclamation sign is the default history expansion character in bash. You could use for example *!n* to run any command from the history, for example *!4* etc. But it's not so useful and it's not worth to know. But you can use *!!* to run the last command and this is very useful, for example when you want to retry the last command with sudo.
 
 ```bash
 ubuntu@web:~$ systemctl restart nginx 
@@ -81,6 +89,8 @@ sudo systemctl restart nginx
 ```
 
 #### Previous location: `-`
+
+cd - will bring you to the previously used directory (if there is one) or it will generate an error. If a previously used directory exists it will change there updating the value of the current working directory and of the previous one, returning a successful exit status (0). Otherwise it will print an error message and it will return an exit status (1).
 
 ```bash
 ubuntu@web:~$ pwd
@@ -105,8 +115,6 @@ $ echo $ip
 10.0.0.4
 
 ```
-
-    
 
 #### Use variable to remove all stopped containers:
 ```bash
