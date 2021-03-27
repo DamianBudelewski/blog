@@ -1,6 +1,6 @@
 ---
 title: Enhance your command line skills!
-date: "2021-04-01"
+date: "2021-03-27"
 description: "My private tips and tricks on how to make your life easier when working with command line by creating aliases, functions, shortcuts and using zsh as your shell!"
 ---
 
@@ -10,8 +10,8 @@ description: "My private tips and tricks on how to make your life easier when wo
 ##### Creating simple aliases
 Add those line to your *.zshrc* or *.bashrc* file! 
 ```sh
-alias d=docker
-alias ap=ansible-playbook
+alias d='docker'
+alias ap='ansible-playbook'
 ```
 
 After that you will be able to use for example:
@@ -20,18 +20,17 @@ After that you will be able to use for example:
 
 ##### Enable autosuggestions with zsh
 
-You can see suggestions based on your previous commands and create a shortcut that will accept suggestions in your shell! You only have to install [zsh](https://ohmyz.sh/) as your new shell and install and enable [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) plugin. Click on the links to find how to do this. After you install those, add this line tou your *.zshrc* file to enable `ctrl + space` shortcut to accept suggestions and you are ready to go.
+You can see suggestions based on your previous commands and create a shortcut that will accept suggestions in your shell! You only have to install [zsh](https://ohmyz.sh/) as your new shell and install and enable [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) plugin. Click on the links to find how to do this. After you install those, add this line to your *.zshrc* file to enable `ctrl + space` shortcut to accept suggestions and you are ready to go.
 
 ```bash
 bindkey '^ ' forward-word
 ```
 
 ##### Using alias expansion  
-After some time and more and more aliases you might get confused what you are actually executing. To refresh your memery each time you run commands you can add alias expansion fucntionality! You will be still typing only the shortcut but after pressing `ctrl + space` you will get the whole alias **expanded** to the full command.
+After some time and more and more aliases you might get confused what you are actually executing. To refresh your memery each time you run commands you can add alias expansion fucntionality! You will be still typing only the shortcut but at the end after pressing `space` you will get the whole alias **expanded** to the full command.
 
-###### Examples:
+###### Example:
 - `gss` expands to `git status -s`
-- `gcmsg` expands to `git commit -m`
 
 To set it up paste this code at the end of your *.zshrc* file. 
 
@@ -49,9 +48,12 @@ bindkey -M isearch " " magic-space
 ```
 <sub>Source: https://blog.sebastian-daschner.com/entries/zsh-aliases<sub>
 
-##### Example
-
-How it works. This is achieved by only using `ctrl + space` shortcut.
+##### How it looks like
+ 
+In this example I'm only using the shortcut to accept suggestions and expand aliases I explained earlier in this blog post. 
+Just to remind it's: 
+- `space` - to expand an alias
+- `ctrl + space` - accept suggestion
 
 <p align="center">
   <img src="moving_cli.gif" style="border-radius: 2%;" width="100%" height="100%"/>
@@ -87,7 +89,7 @@ vim $_
 
 ##### Last used command: `!!`
 
-Exclamation sign is the default history expansion character in bash. You could use for example *!n* to run any command from the history, for example *!4* etc. But it's not so useful and it's not worth to know. But you can use *!!* to run the last command and this is very useful, for example when you want to retry the last command with sudo.
+Exclamation sign is the default history expansion character in bash. You could use for example *!3* to run third command from your bash history. It might seems tricky and I would no recommend that. But you can use *!!* to run the last command and this is very useful, for example when you want to retry the last one after it fails without sudo.
 
 ```bash
 web:~$ systemctl restart nginx 
