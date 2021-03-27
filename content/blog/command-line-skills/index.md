@@ -1,7 +1,7 @@
 ---
 title: Enhance your command line skills!
 date: "2021-04-01"
-description: "My private tips and tricks on how to make your life easier with aliases, functions, shortcuts and zsh!"
+description: "My private tips and tricks on how to make your life easier when working with command line by creating aliases, functions, shortcuts and using zsh as your shell!"
 ---
 
 ## Aliases and autosuggestions
