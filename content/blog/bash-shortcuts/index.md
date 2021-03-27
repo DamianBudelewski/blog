@@ -27,11 +27,11 @@ bindkey '^ ' forward-word
 ```
 
 ##### Using alias expansion  
-After some time and more and more aliases you might get confused what you are actually executing. To refresh your memery each time you run commands you can add alias expansion fucntionality! You will be still typing only the shortcut but after pressing *space* you will get the whole alias *expanded* to the full command.
+After some time and more and more aliases you might get confused what you are actually executing. To refresh your memery each time you run commands you can add alias expansion fucntionality! You will be still typing only the shortcut but after pressing `ctrl + space` you will get the whole alias **expanded** to the full command.
 
 ###### Examples:
-- `gss` after pressing space will expand to `git status -s`
-- `gcmsg` after pressing space will expand to `git commit -m`
+- `gss` expands to `git status -s`
+- `gcmsg` expands to `git commit -m`
 
 To set it up paste this code at the end of your *.zshrc* file. 
 
@@ -63,10 +63,12 @@ How it works. This is achieved by only using `ctrl + space` shortcut.
 
 <img src="moving_cli.png" width="90%" />
 
-##### Most handy ones:  
-- `ctrl + a` and `ctrl + e` - jump to the beggining/end  
-- `alt + b` and `alt + f` - jump word backward/forward  
-- `ctrl + w` - remove last word  
+##### Most handy ones
+- `ctrl + a` and `ctrl + e` 
+- `alt + b` and `alt + f` 
+- `ctrl + w` to remove last word
+
+##### Additional one
 - `ctrl + l` - clear the terminal
 
 
@@ -76,10 +78,10 @@ How it works. This is achieved by only using `ctrl + space` shortcut.
 The underscore variable is set at shell startup and contains the absolute file name of the shell or script being executed as passed in the argument list. Subsequently, it expands to the last argument to the previous command, after expansion. 
 
 ```bash
-# move file from one dir to another.  
+# mv file from one dir to another.  
 mv dir1/file.txt dir2/file.txt
 
-# To open it use `$_`. 
+# open it with `$_`. 
 vim $_
 ```
 
@@ -88,11 +90,11 @@ vim $_
 Exclamation sign is the default history expansion character in bash. You could use for example *!n* to run any command from the history, for example *!4* etc. But it's not so useful and it's not worth to know. But you can use *!!* to run the last command and this is very useful, for example when you want to retry the last command with sudo.
 
 ```bash
-ubuntu@web:~$ systemctl restart nginx 
+web:~$ systemctl restart nginx 
 Authentication required ...
 ...
 
-ubuntu@web:~$ sudo !!
+web:~$ sudo !!
 sudo systemctl restart nginx 
 ```
 
@@ -123,6 +125,15 @@ ubuntu@web:~$ pwd
 
 This is mostly implemented in bash scripts but it's also helpful when you want to test/debug something in your terminal. It might clean up your complex commands and save time.
 
+##### Use variable to stop and remove all running containers:
+
+I leverage the possibility to parse commands as variables to other commands in one line very often. This is a great example.
+
+```bash
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+```
+
 ##### Using variables in cloud commands
 ```bash
 ip=$(aws ec2 describe-instances \ 
@@ -138,15 +149,6 @@ sec_grp_id=$(aws cloudformation describe-stacks \
 ec2 authorize-security-group-ingress \ 
   --protocol tcp --port 3306 \ 
   --cidr $ip/32 --group-id $sec_grp_id
-```
-
-##### Use variable to stop and remove all running containers:
-
-I leverage the possibility to parse commands as variables to other commands in one line very often. This is a great example.
-
-```bash
-docker stop $(docker ps -aq)
-docker rm $(docker ps -aq)
 ```
 
 It's all for this post. I hope you found that interesting. If you want to learn more then checkout these articles too!
