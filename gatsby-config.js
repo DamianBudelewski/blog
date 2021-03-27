@@ -56,6 +56,9 @@ module.exports = {
         trackingIds: [
           "G-S8KW99V7KG",
         ],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
         // This object is used for configuration specific to this plugin
         pluginConfig: {
           // Puts tracking script in the head instead of the body
