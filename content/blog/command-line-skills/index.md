@@ -10,8 +10,8 @@ description: "My private tips and tricks on how to make your life easier when wo
 ##### Creating simple aliases
 Add those line to your *.zshrc* or *.bashrc* file! 
 ```sh
-alias d=docker
-alias ap=ansible-playbook
+alias d='docker'
+alias ap='ansible-playbook'
 ```
 
 After that you will be able to use for example:
@@ -29,9 +29,8 @@ bindkey '^ ' forward-word
 ##### Using alias expansion  
 After some time and more and more aliases you might get confused what you are actually executing. To refresh your memery each time you run commands you can add alias expansion fucntionality! You will be still typing only the shortcut but at the end after pressing `space` you will get the whole alias **expanded** to the full command.
 
-###### Examples:
+###### Example:
 - `gss` expands to `git status -s`
-- `gcmsg` expands to `git commit -m`
 
 To set it up paste this code at the end of your *.zshrc* file. 
 
