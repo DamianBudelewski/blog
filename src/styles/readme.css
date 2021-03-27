@@ -1,0 +1,8 @@
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  background: var(--color-highlight-background);
+  background-color: var(--color-highlight-background);
+  color: #FFFFFF;
+  font-weight: lighter;
+  padding: .2em;
+  border-radius: .4em;
+}

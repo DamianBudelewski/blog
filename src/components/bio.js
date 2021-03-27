@@ -22,11 +22,7 @@ const Bio = () => {
         alt="Profile picture"
       />
         <p>
-          Happy to see you on my blog! I'm sure you will find something useful here. If you have any questions, don't hesitate to contact me!
-          <hr/>
-          linkedin.com/in/damianbudelewski/
-          <br/>
-          damian.budelewski@gmail.com
+          Hi! I'm Damian, I work as Infrastructure Engineer. I manage AWS/Azure cloud, automate deploy with CI/CD pipelines and other stuff. I post here my thoughts on interesting topics or explanaition on how things work that I reasearch recently.
         </p>
     </div>
   )

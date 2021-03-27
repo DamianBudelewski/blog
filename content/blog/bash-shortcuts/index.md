@@ -6,26 +6,34 @@ description: "My private tips and tricks on how to make your life easier with al
 
 ## Aliases and autosuggestions
 
-#### Creating simple aliases
-Add those line to your `.zshrc` or `.bashrc` file! They are located in your home directory.
+
+##### Creating simple aliases
+Add those line to your *.zshrc* or *.bashrc* file! 
 ```sh
 alias d=docker
 alias ap=ansible-playbook
 ```
 
-#### Enable autosuggestions with zsh
-`ctrl + space` to accept suggestions  
+After that you will be able to use for example:
+- `d ps` to list running containers. 
+- `ap playbook.yaml` to execute your playbook. 
 
-For zsh and autosuggestions use this links: [zsh](https://ohmyz.sh/), [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+##### Enable autosuggestions with zsh
 
-If you only want to partial accept the suggestions like it's shown at the gif above, then add this line to your .zshrc file, because by default it will accept the whole suggestion.
+You can see suggestions based on your previous commands and create a shortcut that will accept suggestions in your shell! You only have to install [zsh](https://ohmyz.sh/) as your new shell and install and enable [autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) plugin. Click on the links to find how to do this. After you install those, add this line tou your *.zshrc* file to enable `ctrl + space` shortcut to accept suggestions and you are ready to go.
 
-`bindkey '^ ' forward-word`
+```bash
+bindkey '^ ' forward-word
+```
 
-#### Using alias expansion  
-`gss` after pressing space will expand to `git status -s`
+##### Using alias expansion  
+After some time and more and more aliases you might get confused what you are actually executing. To refresh your memery each time you run commands you can add alias expansion fucntionality! You will be still typing only the shortcut but after pressing *space* you will get the whole alias *expanded* to the full command.
 
-To set it up paste this code at the end of your `.zshrc` file. 
+###### Examples:
+- `gss` after pressing space will expand to `git status -s`
+- `gcmsg` after pressing space will expand to `git commit -m`
+
+To set it up paste this code at the end of your *.zshrc* file. 
 
 ```bash {numberLines :55}
 expand-alias-space() {
@@ -41,6 +49,13 @@ bindkey -M isearch " " magic-space
 ```
 <sub>Source: https://blog.sebastian-daschner.com/entries/zsh-aliases<sub>
 
+##### Example
+
+How it works. This is achieved by only using `ctrl + space` shortcut.
+
+<p align="center">
+  <img src="moving_cli.gif" style="border-radius: 2%;" width="100%" height="100%"/>
+</p>
 
 
 ## Moving and erasing
@@ -48,69 +63,93 @@ bindkey -M isearch " " magic-space
 
 <img src="moving_cli.png" width="90%" />
 
-#### Most used by me:  
-`ctrl + a` and `ctrl + e` - jump to the beggining/end  
-`alt + b` and `alt + f` - jump word backward/forward  
-`ctrl + w` - remove last word  
-`ctrl + l` - clear the terminal
+##### Most handy ones:  
+- `ctrl + a` and `ctrl + e` - jump to the beggining/end  
+- `alt + b` and `alt + f` - jump word backward/forward  
+- `ctrl + w` - remove last word  
+- `ctrl + l` - clear the terminal
 
 
 ## Special variables
 
-#### Most recent parameter with `$_`
-```bash
-# Let's assume you moved file from one nested dir to another.  
-mv old/nested/dir/my_file.txt new/nested/dir/my_file.txt
+##### Most recent parameter: `$_`
+The underscore variable is set at shell startup and contains the absolute file name of the shell or script being executed as passed in the argument list. Subsequently, it expands to the last argument to the previous command, after expansion. 
 
-# To easily open it in next command use `$_`. 
+```bash
+# move file from one dir to another.  
+mv dir1/file.txt dir2/file.txt
+
+# To open it use `$_`. 
 vim $_
 ```
 
-#### Last used command with `!!`
+##### Last used command: `!!`
+
+Exclamation sign is the default history expansion character in bash. You could use for example *!n* to run any command from the history, for example *!4* etc. But it's not so useful and it's not worth to know. But you can use *!!* to run the last command and this is very useful, for example when you want to retry the last command with sudo.
 
 ```bash
-ubuntu@web-server:~$ systemctl restart nginx 
-Authentication is required to restart 'nginx.service'.
+ubuntu@web:~$ systemctl restart nginx 
+Authentication required ...
 ...
 
-ubuntu@web-server:~$ sudo !!
+ubuntu@web:~$ sudo !!
 sudo systemctl restart nginx 
 ```
 
-#### Get back to the previous location with `cd -`
+##### Previous location: `-`
+
+
+It's actually an alias for $OLDPWD variable. You can check that by using cd $OLDPWD instead, and it will work the same way.
+> If a previously used directory exists it will change there updating the value of the current working directory and of the previous one, returning a successful exit status (0). Otherwise it will print an error message and it will return an exit status (1).
+
+This note from documentation is worth to remember if you will want to use this variable inside bash scripts.
+
 
 ```bash
-$ pwd
-/Users/damian
+ubuntu@web:~$ pwd
+/etc/nginx
 
-$ cd /var/log  
-$ pwd
+ubuntu@web:~$ cd /var/log  
+ubuntu@web:~$ pwd
 /var/log
 
-$ cd -        
-$ pwd
-/Users/damian
+ubuntu@web:~$ cd -        
+ubuntu@web:~$ pwd
+/etc/nginx
 ```
 
 
 ## Creating and using variables
 
-#### Get variable from json file
-```bash
-$ ip=$(jq -r '.vm.ip' file.json)
-$ echo $ip
-10.0.0.4
+This is mostly implemented in bash scripts but it's also helpful when you want to test/debug something in your terminal. It might clean up your complex commands and save time.
 
+##### Using variables in cloud commands
+```bash
+ip=$(aws ec2 describe-instances \ 
+  --instance-id i-0fa82200000000 \ 
+  --region eu-west-1 \ 
+  --query 'Reservations[*].Instances[*].PublicIpAddress' \ 
+  --output text)
+
+sec_grp_id=$(aws cloudformation describe-stacks \ 
+  --region eu-west-1 --stack-name my-cluster \ 
+  --query "Stacks[*].Outputs[?OutputKey=='app-sg'].OutputValue")
+
+ec2 authorize-security-group-ingress \ 
+  --protocol tcp --port 3306 \ 
+  --cidr $ip/32 --group-id $sec_grp_id
 ```
 
-    
+##### Use variable to stop and remove all running containers:
 
-#### Use variable to remove all stopped containers:
+I leverage the possibility to parse commands as variables to other commands in one line very often. This is a great example.
+
 ```bash
+docker stop $(docker ps -aq)
 docker rm $(docker ps -aq)
 ```
 
-#### If you found that interesting then checkout these articles too!
+It's all for this post. I hope you found that interesting. If you want to learn more then checkout these articles too!
 
 [Bash cheatsheet](https://devhints.io/bash)  
 [Bash shortcuts](https://gist.github.com/tuxfight3r/60051ac67c5f0445efee)   
