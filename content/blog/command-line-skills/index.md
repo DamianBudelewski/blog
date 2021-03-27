@@ -27,7 +27,7 @@ bindkey '^ ' forward-word
 ```
 
 ##### Using alias expansion  
-After some time and more and more aliases you might get confused what you are actually executing. To refresh your memery each time you run commands you can add alias expansion fucntionality! You will be still typing only the shortcut but after pressing `ctrl + space` you will get the whole alias **expanded** to the full command.
+After some time and more and more aliases you might get confused what you are actually executing. To refresh your memery each time you run commands you can add alias expansion fucntionality! You will be still typing only the shortcut but at the end after pressing `space` you will get the whole alias **expanded** to the full command.
 
 ###### Examples:
 - `gss` expands to `git status -s`
@@ -51,8 +51,10 @@ bindkey -M isearch " " magic-space
 
 ##### How it looks like
  
-In this example I'm only using the shortcut to accept suggestions and expand aliases I explained earlier in this blog post. I am using the same shortcut for both of those and it works fine.   
-Just to remind it's: `ctrl + space`
+In this example I'm only using the shortcut to accept suggestions and expand aliases I explained earlier in this blog post. 
+Just to remind it's: 
+- `space` - to expand an alias
+- `ctrl + space` - accept suggestion
 
 <p align="center">
   <img src="moving_cli.gif" style="border-radius: 2%;" width="100%" height="100%"/>
