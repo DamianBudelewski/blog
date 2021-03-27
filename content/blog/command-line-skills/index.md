@@ -1,6 +1,6 @@
 ---
 title: Enhance your command line skills!
-date: "2021-03-15T22:12:03.284Z"
+date: "2021-04-01"
 description: "My private tips and tricks on how to make your life easier with aliases, functions, shortcuts and zsh!"
 ---
 
