@@ -962,7 +962,14 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.4", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
+"@babel/runtime@7.5.5":
+  version "7.5.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.5.5.tgz#74fba56d35efbeca444091c7850ccd494fd2f132"
+  integrity sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
+"@babel/runtime@^7.10.0", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4":
   version "7.13.10"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
   integrity sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==
@@ -2520,17 +2527,17 @@ async@1.5.2:
   resolved "https://registry.yarnpkg.com/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
   integrity sha1-7GphrlZIDAw8skHJVhjiCJL5Zyo=
 
+async@>=0.2.9, async@^3.1.0, async@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/async/-/async-3.2.0.tgz#b3a2685c5ebb641d3de02d161002c60fc9f85720"
+  integrity sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==
+
 async@^2.6.2:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
   integrity sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
   dependencies:
     lodash "^4.17.14"
-
-async@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/async/-/async-3.2.0.tgz#b3a2685c5ebb641d3de02d161002c60fc9f85720"
-  integrity sha512-TR2mEZFVOj2pLStYxLht7TyfuRzaydfpxr3k9RpHIzMgw7A64dzsdqCxH1WJyQdoe8T10nDXd9wnEigmiuHIZw==
 
 asynckit@^0.4.0:
   version "0.4.0"
@@ -2867,7 +2874,7 @@ bl@^4.0.0, bl@^4.0.3:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-bluebird@^3.7.2:
+bluebird@^3.5.5, bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
@@ -5595,6 +5602,14 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.1.1.tgz#c4b489e80096d9df1dfc97c79871aea7c617c469"
   integrity sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==
 
+fluent-ffmpeg@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/fluent-ffmpeg/-/fluent-ffmpeg-2.1.2.tgz#c952de2240f812ebda0aa8006d7776ee2acf7d74"
+  integrity sha1-yVLeIkD4EuvaCqgAbXd27irPfXQ=
+  dependencies:
+    async ">=0.2.9"
+    which "^1.1.1"
+
 follow-redirects@^1.0.0, follow-redirects@^1.10.0:
   version "1.13.3"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.3.tgz#e5598ad50174c1bc4e872301e82ac2cd97f90267"
@@ -5864,6 +5879,20 @@ gatsby-plugin-feed@^3.0.0:
     lodash.merge "^4.6.2"
     rss "^1.2.2"
 
+gatsby-plugin-ffmpeg@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-ffmpeg/-/gatsby-plugin-ffmpeg-0.3.1.tgz#5e15e8b5d27fe42ad388a0f0353e28e23fac786d"
+  integrity sha512-JDSN5ExALyHXGA1hwaRVBt4+wmrOQrJwxs+Sp/fykCwagqhsi9IKikY+4vwtcgdOHNJbQ3gi7+BMbRHlqKwtwQ==
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    async "^3.1.0"
+    bluebird "^3.5.5"
+    fluent-ffmpeg "^2.1.2"
+    fs-exists-cached "^1.0.0"
+    gatsby ">2.0.0"
+    lodash "^4.17.15"
+    progress "^2.0.3"
+
 gatsby-plugin-gatsby-cloud@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-gatsby-cloud/-/gatsby-plugin-gatsby-cloud-2.1.0.tgz#87bdf357d10fa9364e3edd240e6d5b3a8c8e7983"
@@ -6075,7 +6104,7 @@ gatsby-recipes@^0.12.0:
     xstate "^4.9.1"
     yoga-layout-prebuilt "^1.9.6"
 
-gatsby-remark-copy-linked-files@^3.0.0:
+gatsby-remark-copy-linked-files@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-3.1.0.tgz#64c116c4be8e379e767168ce6b40c825a385db6f"
   integrity sha512-VFpORuDUYEB/Q24NPpt1NDCTLzpGaFHb0sUj0lKAOqfdM8WJKiZhoGVfgnKZP5yAeaf70KeawUXJipj75ucmmA==
@@ -6135,6 +6164,19 @@ gatsby-remark-smartypants@^3.0.0:
     retext "^5.0.0"
     retext-smartypants "^3.0.3"
     unist-util-visit "^1.4.1"
+
+gatsby-remark-videos@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-videos/-/gatsby-remark-videos-0.3.5.tgz#445582b2771fd706b8a649ea5f7dcf381f37ffd4"
+  integrity sha512-RmRrUvVYzRA2NfHwxklsF4lAHNp6arYUJtMcs5bR63PU0f+XjmrV1+t5lHCmxfChis2dJaL4ZcRrfWIAmL4xqg==
+  dependencies:
+    "@babel/runtime" "7.5.5"
+    bluebird "^3.5.5"
+    gatsby-plugin-ffmpeg "^0.3.1"
+    is-relative-url "^3.0.0"
+    lodash "^4.17.15"
+    slash "^3.0.0"
+    unist-util-select "^1.5.0"
 
 gatsby-remark-vscode@^3.2.1:
   version "3.2.1"
@@ -6228,7 +6270,7 @@ gatsby-transformer-sharp@^3.1.0:
     semver "^7.3.4"
     sharp "^0.27.0"
 
-gatsby@^3.1.2:
+gatsby@>2.0.0, gatsby@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.1.2.tgz#666420ad991e092b1d7e9fb887c2c31f6a8c4118"
   integrity sha512-3gF954rAkbZimrJe0K8gXl6Xe1AGyu04k813ut1Dzh98xf6WJoJQOFjQKB9MLmrzY7WRS94Pah1/9GuO+5hEpQ==
@@ -11118,7 +11160,7 @@ regenerator-runtime@^0.11.0:
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
   integrity sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==
 
-regenerator-runtime@^0.13.3, regenerator-runtime@^0.13.4:
+regenerator-runtime@^0.13.2, regenerator-runtime@^0.13.3, regenerator-runtime@^0.13.4:
   version "0.13.7"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.7.tgz#cac2dacc8a1ea675feaabaeb8ae833898ae46f55"
   integrity sha512-a54FxoJDIr27pgf7IgeQGxmqUNYrcV338lf/6gH456HZ/PhX+5BcwHXG9ajESmwe6WRO0tAzRUrRmNONWgkrew==
@@ -13679,7 +13721,7 @@ which-pm-runs@^1.0.0:
   resolved "https://registry.yarnpkg.com/which-pm-runs/-/which-pm-runs-1.0.0.tgz#670b3afbc552e0b55df6b7780ca74615f23ad1cb"
   integrity sha1-Zws6+8VS4LVd9rd4DKdGFfI60cs=
 
-which@^1.2.9, which@^1.3.1:
+which@^1.1.1, which@^1.2.9, which@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/which/-/which-1.3.1.tgz#a45043d54f5805316da8d62f9f50918d3da70b0a"
   integrity sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==
