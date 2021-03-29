@@ -47,12 +47,12 @@ const SocialButton = styled.a`
   margin-right: 16px;
   border: 0;
   cursor: pointer;
-  box-shadow: 0px 0px 2px
+  box-shadow: 0px 0px 1px
       ${props =>
         color(props.theme.accent)
           .darken(0.1)
           .toString()},
-    0px 0px 14px ${props => props.theme.accent};
+    0px 0px 4px ${props => props.theme.accent};
   &:hover {
     background: ${props =>
       color(props.theme.accent)
