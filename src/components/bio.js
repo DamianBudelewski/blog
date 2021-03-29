@@ -10,6 +10,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 const Bio = () => {
   return (
+    <>
     <div className="bio">
       <StaticImage
         className="bio-avatar"
@@ -21,10 +22,11 @@ const Bio = () => {
         quality={95}
         alt="Profile picture"
       />
-        <p>
-          Hi! I'm Damian, I work as Infrastructure Engineer. I manage AWS/Azure cloud, automate deploy with CI/CD pipelines and other stuff. I post here my thoughts on interesting topics or explanaition on how things work that I reasearch recently.
-        </p>
+        <h7> 
+          Cloud and Security enthusiast
+        </h7>
     </div>
+    </>
   )
 }
 

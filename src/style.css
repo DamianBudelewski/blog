@@ -114,7 +114,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+h7 {
   font-weight: var(--fontWeight-bold);
   color: var(--color-heading);
 }
@@ -143,6 +144,14 @@ h5 {
 
 h6 {
   font-size: var(--fontSize-1);
+}
+
+h7 {
+  font-size: var(--fontSize-2);
+  margin-top: 10px;
+  font-weight: var(--fontWeight-medium);
+  color: var(--color-heading-black);
+  font-family: var(--font-heading);
 }
 
 h1 > a {
