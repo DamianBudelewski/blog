@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Footer from "../components/footer"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -56,6 +57,8 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
+      <br /><br />
+      <Footer />
     </Layout>
   )
 }

@@ -161,9 +161,3 @@ It's all for this post. I hope you found that interesting. If you want to learn 
 
 
 ### Thanks! 
-Got any questions? 
-
-You can find me on [![LinkedIn][1.2]][1] or send me an email: damian.budelewski@gmail.com
-
-[1.2]: https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/linkedin-3-16.png (LinkedIn)
-[1]: https://www.linkedin.com/in/damianbudelewski/
