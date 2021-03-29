@@ -2,10 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import color from "color"
 
-
 import { config } from "@fortawesome/fontawesome-svg-core"
 import "@fortawesome/fontawesome-svg-core/styles.css"
-config.autoAddCss = false
 
 import { FontAwesomeIcon as _FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -13,6 +11,8 @@ import {
   faGithubAlt,
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons"
+
+config.autoAddCss = false
 
 const FontAwesomeIcon = styled(_FontAwesomeIcon)`
   color: ${props => props.theme.primary};

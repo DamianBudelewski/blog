@@ -345,3 +345,11 @@ a:focus {
   }
 }
 
+@media only screen and (max-width: 400px) {
+  h7 {
+    margin-top: 0px;
+  }
+  .bio-avatar {
+    margin-top: 5px;
+  }
+}
