@@ -1,10 +1,10 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 
+import Footer from "../components/footer"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Footer from "../components/footer"
 import ("./../styles/readme.css")
 
 const BlogIndex = ({ data, location }) => {

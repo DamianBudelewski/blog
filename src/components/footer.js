@@ -2,6 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import color from "color"
 
+
+import { config } from "@fortawesome/fontawesome-svg-core"
+import "@fortawesome/fontawesome-svg-core/styles.css"
+config.autoAddCss = false
+
 import { FontAwesomeIcon as _FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faTwitter,
@@ -69,7 +74,6 @@ const BioLinks = () => (
           href="https://github.com/damianbudelewski"
           target="_blank"
           rel="noreferrer"
-          aria-label="Goto Github"
         >
           <FontAwesomeIcon size="1x" icon={faGithubAlt} />
         </SocialButton>
@@ -77,7 +81,6 @@ const BioLinks = () => (
           href="https://twitter.com/budelewski_d"
           target="_blank"
           rel="noreferrer"
-          aria-label="Goto Twitter"
         >
           <FontAwesomeIcon size="1x" icon={faTwitter} />
         </SocialButton>
@@ -85,7 +88,6 @@ const BioLinks = () => (
           href="https://linkedin.com/in/damianbudelewski"
           target="_blank"
           rel="noreferrer"
-          aria-label="Goto LinkedIn"
         >
           <FontAwesomeIcon size="1x" icon={faLinkedin} />
         </SocialButton>
